@@ -7,7 +7,7 @@ from demoqa_tests import tests
 from demoqa_tests.data.users import User
 
 
-class RegistrationPage():
+class RegistrationPage:
 
     def open(self):
         browser.open('/automation-practice-form')
@@ -83,9 +83,6 @@ class RegistrationPage():
         self.submit_form()
 
     def should_registration_user_with(self, user: User):
-        """name, last_name, email, gender, number,
-                                      date_of_birth, subject, hobby, image_name,
-                                      address, state, city)"""
         browser.element('.table').all('td').even.should(
             have.exact_texts(f'{user.name} {user.last_name}',
                              user.email,
